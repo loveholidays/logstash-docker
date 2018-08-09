@@ -59,6 +59,8 @@ RUN chmod 0755 /usr/local/bin/docker-entrypoint
 
 USER logstash
 
+RUN logstash-plugin install logstash-filter-prune logstash-input-beats
+
 ADD env2yaml/env2yaml /usr/local/bin/
 
 EXPOSE 9600 5044
